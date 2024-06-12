@@ -31,9 +31,7 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: clo835-ecr-assignment1
         IMAGE_TAG: v0.1
-      run: |
-        cd application/
-        ls -ltra
+      run: 
         # Command to build mysql image
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:mydb_$IMAGE_TAG -f Dockerfile_mysql .
         
